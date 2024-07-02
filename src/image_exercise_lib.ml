@@ -7,5 +7,7 @@ let command =
     ; "bluescreen", Blue_screen.command
     ; "blur", Blur.command
     ; "dither", Dither.command
+    ; "edge", Edge_detection.command
+    ; "mosaic", Mosaic.command
     ]
 ;;
