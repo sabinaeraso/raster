@@ -76,14 +76,14 @@ let transform image width height moves =
       let region1 = List.random_element_exn targets in
       let _, x_start, _, y_start, _ = region1 in
       let region2 = find_similar targets region1 in
-      let image2, x_start_2, _, y_start_2, _ = region2 in
+      let _image2, x_start_2, _, y_start_2, _ = region2 in
       ignore
         (List.init (width * height) ~f:(fun i ->
            let x1 = x_start + (i % width) in
            let y1 = y_start + (i / width) in
            let x2 = x_start_2 + (i % width) in
            let y2 = y_start_2 + (i / width) in
-           Image.set image ~x:x1 ~y:y1 (Image.get image2 ~x:x2 ~y:y2))))
+           Image.set image ~x:x1 ~y:y1 (Image.get image ~x:x2 ~y:y2))))
   in
   image
 ;;
